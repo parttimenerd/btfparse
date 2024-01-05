@@ -9,6 +9,7 @@
 #pragma once
 
 #include <string>
+#include <stdint.h>
 
 namespace btfparse {
 
@@ -17,7 +18,7 @@ template <typename Enum> struct DefaultErrorCodePrinter final {
                 "The template parameter must be an enum");
 
   std::string operator()(const Enum &enum_value) const {
-    return std::to_string(static_cast<std::uint64_t>(enum_value));
+    return std::to_string(static_cast<uint64_t>(enum_value));
   }
 };
 
